@@ -1,4 +1,5 @@
 # README
+[![Codeship Status for Crackey117/soundclave](https://app.codeship.com/projects/bbf2fb0b-5c8f-49c0-885e-c87d403f04d6/status?branch=master)](https://app.codeship.com/projects/418793)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
