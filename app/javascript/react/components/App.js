@@ -1,7 +1,15 @@
 import React from 'react'
-
+import { BrowserRouter, Route, Switch } from "react-router-dom"
+import PostIndex from "./PostIndex"
 export const App = (props) => {
-  return (<h1 className="centered-text">Welcome to Soundclave</h1>)
+  return (
+    <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={PostIndex} />
+          <Route exact path="/posts" component={PostIndex} />
+        </Switch>
+    </BrowserRouter>
+  )
 }
 
 export default App
