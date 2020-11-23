@@ -1,10 +1,28 @@
 require "rails_helper"
 RSpec.describe Api::V1::PostsController, type: :controller do 
+  let!(:user1) {User.create(
+    email: "blah@gmail.com", 
+    first_name: "blah",
+    last_name: "blah",
+    password: "blahblah",
+    username: "blah",
+    role: "Fan"
+  )}
+  let!(:user2) {User.create(
+    email: "davy.jones@thelocker.com", 
+    first_name: "davy",
+    last_name: "jones",
+    password: "blahblahblah",
+    username: "squidguy",
+    role: "Fan"
+  )}
   let!(:post1) {Post.create(
-    body: "Bring back live music!"
+    body: "Bring back live music!",
+    user: user1
   )}
   let!(:post2) {Post.create(
-    body: "Livestreams arent enough for me"
+    body: "Livestreams arent enough for me",
+    user: user1
   )}
   
   describe "GET#index" do
