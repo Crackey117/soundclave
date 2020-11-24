@@ -2,7 +2,10 @@ import React from "react"
 
 const PostTile = (props) => {
   return(
-    <p>{props.post.body}</p>
+    <div>
+      <p>{props.post.body}</p>
+      <p>{props.post.user.username}</p>
+    </div>
   )
 }
 

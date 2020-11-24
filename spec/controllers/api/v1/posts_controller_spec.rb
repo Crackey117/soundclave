@@ -22,7 +22,7 @@ RSpec.describe Api::V1::PostsController, type: :controller do
   )}
   let!(:post2) {Post.create(
     body: "Livestreams arent enough for me",
-    user: user1
+    user: user2
   )}
   
   describe "GET#index" do
@@ -31,10 +31,11 @@ RSpec.describe Api::V1::PostsController, type: :controller do
       returned_json = JSON.parse(response.body)
       expect(response.status).to eq 200
       expect(response.content_type).to eq("application/json")
-      expect(returned_json.length).to eq 2
-
-      expect(returned_json[0]["body"]).to eq "Bring back live music!"
-      expect(returned_json[1]["body"]).to eq "Livestreams arent enough for me"
+      expect(returned_json.length).to eq 1 
+      expect(returned_json["post_items"][0]["user"]["username"]).to eq "blah"
+      expect(returned_json["post_items"][0]["body"]).to eq "Bring back live music!"
+      expect(returned_json["post_items"][1]["user"]["username"]).to eq "squidguy"
+      expect(returned_json["post_items"][1]["body"]).to eq "Livestreams arent enough for me"
     end
   end
 end
