@@ -16,7 +16,7 @@ const PostIndex = (props) => {
     })
     .then(response => response.json())
     .then(body => {
-      setPosts(body) 
+      setPosts(body.post_items) 
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
   }, [])
