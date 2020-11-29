@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import PostTile from "./PostTile"
+import PostsForm from "./PostsForm"
 const PostIndex = (props) => {
   const [posts, setPosts] = useState({})
   let postList
@@ -27,10 +28,17 @@ const PostIndex = (props) => {
       )
     })
   }
+  const setNewPosts = (newPost) => {
+    setPosts([
+      ...posts,
+      newPost
+    ])
+  }
   
   return (
     <div>
       {postList}
+      <PostsForm setPosts={setNewPosts}/>
     </div>
   )
 }
