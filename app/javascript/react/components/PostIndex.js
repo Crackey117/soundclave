@@ -28,8 +28,11 @@ const PostIndex = (props) => {
       )
     })
   }
-  const setNewPosts = (newPost) = {
-    setPosts({newPost})
+  const setNewPosts = (newPost) => {
+    setPosts([
+      ...posts,
+      newPost
+    ])
   }
   
   return (
